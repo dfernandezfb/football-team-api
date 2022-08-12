@@ -18,4 +18,4 @@ app.use(express.urlencoded({extended:true}));
 app.use('/matches', matches)
 app.use('/users', users)
 
-app.listen(4000,()=>console.log('Listening...'));
+app.listen(process.env.PORT || 4000,()=>console.log('Listening...'));
