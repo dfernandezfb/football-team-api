@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const logger= require('morgan');
 const connectDB = require('./config/db');
 const matches = require('./routes/matches')
+const users = require('./routes/users')
 
 const app = express();
 dotenv.config();
@@ -15,5 +16,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/matches', matches)
+app.use('/users', users)
 
 app.listen(4000,()=>console.log('Listening...'));
